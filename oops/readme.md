@@ -335,4 +335,28 @@ d.eat();
 ***uses***
 * to implement multiple inheritnce.
 * total abstraction 
-* for the class we use the key word ``` extends ``` and for the interfaces we use the word ``` implements ```.        
+* for the class we use the key word ``` extends ``` and for the interfaces we use the word ``` implements ```.  
+* a chess player program is given to under stand the interface 
+
+## implementing multiple inheritance.
+```java
+    interface Heribivore {
+
+    }
+    interface Carnivore {
+
+    }
+    class Bear implements Herbivore, Carnivore {
+
+    }
+```
+
+# Static Keyword.
+
+        Static keyword in Java is used to share the same variable or method of a given class.
+
+# super keyword.
+        super keyword is used to refer the immediate parent class object.
+        - to access parents properties
+          - to access parents functions
+            - to access parents constructor
