@@ -358,5 +358,84 @@ d.eat();
 # super keyword.
         super keyword is used to refer the immediate parent class object.
         - to access parents properties
-          - to access parents functions
-            - to access parents constructor
+        - to access parents functions
+        - to access parents constructor
+
+general idea .
+
+``` java 
+    public class superKey {
+    public static void main(String[] args) {
+        Horse h = new Horse();
+    }
+}
+// creating a class
+class Animal {
+    Animal(){
+        System.out.println("animal constructor is called");
+
+    }
+}
+
+class Horse extends Animal {
+    // creating a constructor
+    Horse(){
+
+        super();// here the java by deafult calls the parent class first then the child class 
+        // u can say the java used the super by default.
+        System.out.println("horse constructor is called ");
+
+    }
+} 
+```
+another use : -> 
+``` java
+
+package oops;
+
+public class superKey {
+    public static void main(String[] args) {
+        Horse h = new Horse();
+        System.out.println(h.color);// it will print the horse color 
+    }
+}
+// creating a class
+class Animal {
+
+    String color;
+    Animal(){
+        System.out.println("animal constructor is called");
+
+    }
+}
+
+class Horse extends Animal {
+    // creating a constructor
+    Horse(){
+
+        super.color = " brown";// accessing the immdiate parent class property
+        System.out.println("horse constructor is called ");
+
+    }
+}
+```
+here the above example is to access the property of the parent class.
+
+
+-------------------------------
+
+***some notes***
+``` java 
+    class Vehicle{}
+    class Car extends Vehicle{}
+    // if the above are the child class and the parent class respectively then
+    // all the object creation method listed below are correct .
+    // right side -> object creation ; and left side -> reference ;
+     Car c = new Car();
+     Vehicle v = new Vehicle();
+     Vehicle v = new Car(); // child class aa ai rokhm vabe pass korte para;== parent ar reference aa child ar object store hocche ;but the vice versa not possible 
+```
+     
+
+
+
