@@ -46,3 +46,39 @@ void message() {
 ```
 
 In summary, if you want to call a method directly from the `main` method without creating an instance of the class, you need to declare that method as `static`. Otherwise, you would need to create an instance of the class and call the non-static method on that instance.
+
+# why use the recursion?
+1. it helps in solving bigger and complex problems in simple way.
+2. you can convert the recursion to the iteration and vise versa.
+3. space complexity is not constant due to the recursive calls.
+
+# example of recurcion .
+
+printing numbers .``` if there is a problem in the  understanding just use the debugger tool and understand the call stack :the main point is after the function is called the function always left the stack```
+
+``` java 
+    // this is a perfect example of using the recursion
+    public class printing {
+    public static void main(String[] args) {
+
+        // this is a simple program that print number 12345 by using the recursion.
+        print(1); // passing the value of n = 1 ; in the function
+
+        
+    }
+    
+public static void print(int n) {
+    if(n== 5){ // this statement is the base statement .
+        System.out.println(5);
+        return ; // if n = 5 then return to the previous 
+    }
+    System.out.println(n);// print the num that is given in the input.
+    // again calling the same function by increasing the value by 1
+    print(n+1);
+    
+}
+
+    
+}
+
+```
