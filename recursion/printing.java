@@ -2,7 +2,7 @@ package recursion;
 
 public class printing {
     public static void main(String[] args) {
-
+        // problem 2 :
         // this is a simple program that print number 12345 by using the recursion.
         print(1); // passing the value of n = 1 ; in the function
 

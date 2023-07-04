@@ -75,6 +75,7 @@ public static void print(int n) {
     System.out.println(n);// print the num that is given in the input.
     // again calling the same function by increasing the value by 1
     print(n+1);
+    // this is a tailed recursion there is no case like addition of somthing and returning.
     
 }
 
@@ -82,3 +83,66 @@ public static void print(int n) {
 }
 
 ```
+
+# how to understand and approach a problem 
+1. identify if you can break the problem into smaller problem .
+2. write the recursion relation if needed.
+3. draw the recursion tree.
+ * See the flow of the function how are they getting in the stack.
+ * identify and focus on the left tree calls or the write tree calls. eg -> in the fibonacchi program u have written fibon(n-1) + fibon(n-2) ; here i am trying to say that first the fibon(n-1) will execute then the fibon(n-2) will execute ..... and the recursion process will continue till continue like the fibon(n-1) + fibon(n-2)... until it reachs the end point .... fibon of( n-1 ) has not finished executing so you cannot execute the fibon(n-2)
+![fibonacci tree](image.png).
+* draw the tree and the pointer again and again using pen and paper.
+* use a debugger to the flow to see the flow .
+4. see how the values are returned at each step..se how the function call will come out of each step. In the end you will come out of the main function.
+
+# two key areas
+1. how to call the function and the trees and that kind of stuff.
+2. the second most important thing is variable 
+
+In the fibonacci example there are three types variables ..one is in the argument ,, the other is which is being returned and the other is in the body.
+
+## working with the variables in the recursion 
+        * arguments // what ever you put in the arguments it is going in the next function call 
+        * return type 
+        * body of the function 
+
+        notes :
+        1. if there are variables that you want to pass in the future calls put it in the arguments with out thinking twice about it . example: the starting point and the ending points in the binary search ...this starting point and the ending point changes with the each iteration of the array.
+        2. the value which is not beneficial to the future calls put it inside the body.
+***binary search with the recursion:-***
+At the every steps it does the two things . First is the comparing with the middlle number to know .. if the number we are going to find is belong to the right hand side or the left hand side .Therefore it is a one single step and it takes a constant time ( it does not depend on the size of the array). the second is the search in the array of ther (N/2).
+``` F(N) = O(1) + f(N/2)```.. ```first part is for the comparison and the second part is for the search  ```
+## types of reference 
+1. linear recurrence -> fibonacci 
+2. divide and conquer recurrence.
+
+-------------------------------------------------------
+
+Problem to find the last occurence of a number.
+``` java
+    package recursion;
+
+public class prob8 {
+    public static void main(String[] args) {
+        // this is a program to find the last occurance of a number inside the array .
+        
+    }
+
+    public static int lastOccur(int[] arr ,int index,int num){
+        //base condition
+        if(index == arr.length)
+            return -1;
+        // function
+        int isFound = lastOccur(arr, index +1, num)  ;
+        if(isFound == -1 && arr[index] == num)
+            return index;
+        
+            return isFound ;
+
+    }
+    
+}
+
+```
+
+this problem logic is a bit different but the logic is rather lame ;;; first it puts all the recursion in the  call stack ... ``` int isFound = lastOccur(arr, index +1, num)``` this  line does this job .The second conditon is when it is already in the call stack ``` if(isFound == -1 ```check the ``` arr[index] == num)``` then it returns the index . The first time it returns the number which is present first in the array .. but the second time it just over rides with the new number .. this happens until the last element present which matches the number . 
